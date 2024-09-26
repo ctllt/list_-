@@ -1,0 +1,24 @@
+<html>
+
+<body>
+    <h1>你好</h1>
+    <script>
+        function loadImageAsync(url) {
+            return new Promise(function (resolve, reject) {
+                const image = new Image();
+                image.onload = function () {
+                    resolve(image);
+                };
+                image.onerror = function () {
+                    reject(new Error('Could not load image at ' + url));
+                };
+                image.src = url;
+                console.log(image);
+                
+            });
+        }
+        loadImageAsync("https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2022%2F0416%2F477f4510j00rae57t001dc000hs00dcc.jpg&thumbnail=660x2147483647&quality=80&type=jpg")
+
+    </script>
+</body>
+</html>
